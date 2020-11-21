@@ -4,7 +4,7 @@ import axios from 'axios';
 
 function App() {
   const [catLink, setCatLink] = useState();
-  axios.get("http://aws.random.cat/meow", {
+  axios.get("https://aws.random.cat/meow", {
 
   }).then((response) => {
     setCatLink(response.data.file);
