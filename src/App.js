@@ -1,14 +1,18 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 
 function App() {
   const [catLink, setCatLink] = useState();
-  axios.get("https://aws.random.cat/meow", {
+  
+  useEffect(() => {
+    axios.get("https://aws.random.cat/meow", {
+  
+    }).then((response) => {
+      setCatLink(response.data.file);
+    });
+  }, []);
 
-  }).then((response) => {
-    setCatLink(response.data.file);
-  });
   return (
     <div >
       <img
